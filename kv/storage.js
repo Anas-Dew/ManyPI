@@ -49,7 +49,7 @@ router.put('/replace/:key', (req, res) => {
 });
 
 // Route to delete all key-value pairs
-router.delete('/deleteAll', (req, res) => {
+router.delete('/thanos', (req, res) => {
     Object.keys(storage).forEach((key) => delete storage[key]);
     res.status(200).json({ message: 'All keys deleted successfully' });
 });

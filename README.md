@@ -14,11 +14,20 @@ Currently solutions for
 3. Run the service 
 
 if you're using PM2:
-``pm2 start server.js``
+``pm2 start server.js --name ManyPI``
 
 It will listen to ``localhost:7005``
 then connect any domain of yours to this port.
 
+4. (Optional) Edit ENV file
+
+You may like to configure env file for
+    
+    a. S3_UPLOAD_LIMIT, which allows you to set limit for each file upload in MB.
+    
+    b. ALLOWED_DOMAINS, allow which domains can make requests to the server APIs. For example put: https://google.com,http://localhost:3000
+    
+    (DO NOT ADD ANY SPACE IN BETWEEN OR A SLASH AT THE END. FOLLOW EXAMPLE FORMAT.)
 Done!
 
 ## Why I built this?

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const multer = require('multer');
 const path = require('path');
 
@@ -12,6 +13,9 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: parseInt(process.env.S3_UPLOAD_LIMIT) * 1024 * 1024 }  // 5 MB limit
+});
 
 module.exports = upload;
