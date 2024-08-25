@@ -3,6 +3,8 @@
 
 A Simple and Cost-Effective Solution for Big Challenges. Designed to even run on a $5 Linux Machine, built on Node.js.
 
+[API Docs 🚀](https://documenter.getpostman.com/view/18849676/2sAXjF8utc)
+
 ### Current Features
 
 - **S3 (Blob Storage) ✅**
