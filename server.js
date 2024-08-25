@@ -3,7 +3,7 @@ const express = require('express');
 const storageRouter = require('./kv/storage');
 const fileRoutes = require('./s3/src/routes/fileRoutes');
 const cors = require('cors')
-
+const authMiddleware = require('./middleware/auth');
 const app = express();
 const PORT = process.env.PORT || 7005;
 
@@ -20,6 +20,7 @@ const corsOptions = {
     }
 };
 
+app.use(authMiddleware);
 app.use(cors(corsOptions));
 app.use(express.json());
 
@@ -27,5 +28,5 @@ app.use('/kv', storageRouter); // Key-Value In-Memory Storage
 app.use('/s3', fileRoutes); // Simple Storage API
 
 app.listen(PORT, () => {
-    console.log(`Many PI is running on PORT: ${PORT}`);
+    console.log(`Many PI is up!`);
 });
